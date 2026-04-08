@@ -21,6 +21,8 @@ e quantas vezes, ele ocorre
 #include <stdio.h>
 #include <time.h>
 
+
+float **alocar_memoria_matriz
 //alocacao de memoria
 float *alocar_memoria(int x){
 	// alocando a memoria em X posicoes
