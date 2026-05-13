@@ -32,6 +32,49 @@ void mostrar_lista(No *lista){
 		aux = aux->prox;
 	}
 }
+
+No *inserir_no_final(No *lista){
+	No *novo = (No*) malloc(sizeof(No));
+	printf("Informe o nome \n");
+	scanf("%s", novo->nome);
+	printf("Informe a matricula de %s \n", novo->nome);
+	scanf("%d", &novo->matricula);
+	novo->prox = NULL;
+	if(lista == NULL){
+		return novo;
+	}
+	else{
+		No *aux = lista;
+		while(aux->prox != NULL){
+			aux = aux->prox;
+		}
+		aux->prox = novo;
+		return lista;
+	}
+}
+
+int remover_no(No *lista, int matricula){
+	No *aux = lista;
+	No *ant = NULL;
+	while(aux != NULL){
+		if(aux->matricula == matricula){
+			if(ant == NULL){
+				lista = aux->prox;
+			}
+			else{
+				ant->prox = aux->prox;
+			}
+			printf("Aluno %s removido com sucesso \n", aux->nome);
+			free(aux);
+			return 1; //sucesso
+		}
+		ant = aux;
+		aux = aux->prox;
+	}
+	return 0; //falha
+}
+
+
 void liberar_lista(No *lista){
 	No *temp = NULL;
 	while(lista != NULL){
@@ -40,3 +83,4 @@ void liberar_lista(No *lista){
 		free(temp);
 	}
 }
+
