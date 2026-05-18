@@ -307,7 +307,7 @@ A implementação deve respeitar os princípios de encapsulamento.
 
 # Arquivo `.h`
 
-O arquivo `.h`:
+O arquivo `biblioteca.h`:
 
 ## DEVE conter:
 
